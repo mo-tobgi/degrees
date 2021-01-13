@@ -151,6 +151,7 @@ def shortest_path(source, target):
 
         # If node is the goal, then we have a solution
         if node.state == target:
+            print(f"explored: {num_explored}")
             movies_list = []
             stars_list = []
             while node.parent is not None:
@@ -165,7 +166,7 @@ def shortest_path(source, target):
                 y = (movies_list[i], stars_list[i])
                 solution.append(y)
             return solution
-
+            
         # Mark node as explored
         explored.add(node.state)
 
@@ -218,4 +219,3 @@ def neighbors_for_person(person_id):
 if __name__ == "__main__":
     main()
 
-print(num_explored)
